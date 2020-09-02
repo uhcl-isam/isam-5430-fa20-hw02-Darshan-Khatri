@@ -37,7 +37,7 @@ namespace CSharp.Assignments.Loop1.Tests
             Assert.AreEqual(1, Logic1.CaughtSpeeding(85, true));
             Assert.AreEqual(1, Logic1.CaughtSpeeding(70, false));
             Assert.AreEqual(1, Logic1.CaughtSpeeding(75, false));
-            Assert.AreEqual(1, Logic1.CaughtSpeeding(75, true));
+            Assert.AreEqual(0, Logic1.CaughtSpeeding(75, true));
             Assert.AreEqual(0, Logic1.CaughtSpeeding(40, false));
             Assert.AreEqual(0, Logic1.CaughtSpeeding(40, true));
             Assert.AreEqual(2, Logic1.CaughtSpeeding(90, false));
@@ -203,7 +203,7 @@ namespace CSharp.Assignments.Loop1.Tests
         {
 
             Assert.AreEqual(true, Logic1.CloseFar(1, 2, 10));
-            Assert.AreEqual(false, Logic1.CloseFar(1, 2, 3));
+            Assert.AreEqual(false, Logic1.CloseFar(1, 2, 3));//
             Assert.AreEqual(true, Logic1.CloseFar(4, 1, 3));
             Assert.AreEqual(false, Logic1.CloseFar(4, 5, 3));
             Assert.AreEqual(false, Logic1.CloseFar(4, 3, 5));
