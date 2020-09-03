@@ -34,12 +34,47 @@ namespace CSharp.Assignments.Selection1
             //num1 = myfunc(11, 6);
             //Console.WriteLine("My function = " + num1);
 
-            int number = 12345;
-            string numberString = number.ToString();
-            Console.WriteLine(numberString);
-            Console.WriteLine(numberString.Length);
-            //Console.WriteLine(number/numberString.Length);
-            Console.WriteLine(number/10000);
+            //int number = 12345;
+            //string numberString = number.ToString();
+            //Console.WriteLine(numberString);
+            //Console.WriteLine(numberString.Length);
+            ////Console.WriteLine(number/numberString.Length);
+            //Console.WriteLine(number/10000);
+
+
+            Console.Write("Enter the number of rows: ");
+            int num = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the fill character: ");
+            char fillChar = Char.Parse(Console.ReadLine());
+
+            int Outercounter = 0;
+            int Innercounter = 0;
+
+            while (Outercounter < num)
+            {
+                while (Innercounter < num)
+                {
+                    if (Outercounter == 0 || Outercounter % 2 == 0)
+                    {
+                        Console.Write(fillChar + " ");
+                    }
+                    else
+                    {
+                        if (Innercounter == 0)
+                        {
+                            Console.Write(" " + fillChar + " ");
+                        }
+                        else
+                        {
+                            Console.Write(fillChar+ " ");
+                        }
+                    }
+                    Innercounter++;
+                }
+                Outercounter++;
+                Innercounter = 0;
+                Console.WriteLine();
+            }
         }
     }
 }
