@@ -78,38 +78,118 @@ namespace CSharp.Assignments.Selection1
             //}
 
 
-            int accountNumber = 0;
-            Console.Write("Enter your account number: ");
-            accountNumber = Convert.ToInt32(Console.ReadLine());
-            while (accountNumber > 0)
-            {
-                int balance = 0;
-                Console.Write("Enter your balance: ");
-                balance = Convert.ToInt32(Console.ReadLine());
+            //int accountNumber = 0;
+            //Console.Write("Enter your account number: ");
+            //accountNumber = Convert.ToInt32(Console.ReadLine());
+            //while (accountNumber > 0)
+            //{
+            //    int balance = 0;
+            //    Console.Write("Enter your balance: ");
+            //    balance = Convert.ToInt32(Console.ReadLine());
 
-                int chargeAmount = 0;
-                Console.Write("Enter total charge you for this month: ");
-                chargeAmount = Convert.ToInt32(Console.ReadLine());
+            //    int chargeAmount = 0;
+            //    Console.Write("Enter total charge you for this month: ");
+            //    chargeAmount = Convert.ToInt32(Console.ReadLine());
 
-                int credit = 0;
-                Console.Write("Enter credit for this month: ");
-                credit = Convert.ToInt32(Console.ReadLine());
+            //    int credit = 0;
+            //    Console.Write("Enter credit for this month: ");
+            //    credit = Convert.ToInt32(Console.ReadLine());
 
-                int AllowedCredit = 0;
-                Console.Write("Enter allowed credit limit: ");
-                AllowedCredit = Convert.ToInt32(Console.ReadLine());
+            //    int AllowedCredit = 0;
+            //    Console.Write("Enter allowed credit limit: ");
+            //    AllowedCredit = Convert.ToInt32(Console.ReadLine());
 
-                int CalcNewBalance = 0;
-                CalcNewBalance = balance + chargeAmount - credit;
-                Console.WriteLine($"New Balance = {CalcNewBalance}");
-                if (CalcNewBalance > AllowedCredit)
-                {
-                    Console.WriteLine("Credit limit exceeded!");
-                }
+            //    int CalcNewBalance = 0;
+            //    CalcNewBalance = balance + chargeAmount - credit;
+            //    Console.WriteLine($"New Balance = {CalcNewBalance}");
+            //    if (CalcNewBalance > AllowedCredit)
+            //    {
+            //        Console.WriteLine("Credit limit exceeded!");
+            //    }
 
-                Console.Write("Enter your account number: ");
-                accountNumber = Convert.ToInt32(Console.ReadLine());
-            }
+            //    Console.Write("Enter your account number: ");
+            //    accountNumber = Convert.ToInt32(Console.ReadLine());
+            //}
+
+            //Console.Error.WriteLine("Enter the number of lines.");
+            //int n = Convert.ToInt32(Console.ReadLine());
+
+            //int outerCounter = 0;
+            //int innerCounter = 0;
+
+            //while (outerCounter < n)
+            //{
+            //    while (innerCounter <= outerCounter)
+            //    {
+            //        Console.Write("*");
+            //        innerCounter++;
+            //    }
+            //    Console.WriteLine();
+            //    outerCounter++;
+            //    innerCounter = 0;
+            //}
+            //Console.WriteLine("------------------------");
+            //outerCounter = n;
+            //innerCounter = 0;
+            //while (outerCounter > 0)
+            //{
+            //    while (innerCounter < outerCounter)
+            //    {
+            //        Console.Write("*");
+            //        innerCounter++;
+            //    }
+            //    Console.WriteLine();
+            //    outerCounter--;
+            //    innerCounter = 0;
+            //}
+
+            //Console.WriteLine("------------------------------------------");
+            //outerCounter = n;
+            //innerCounter = 0;
+            //while (outerCounter > 0)
+            //{
+            //    while (innerCounter < n)
+            //    {
+            //        if (innerCounter < n- outerCounter)
+            //        {
+            //            Console.Write(" ");
+            //        }
+            //        else
+            //        {
+            //            Console.Write("*");
+            //        }
+            //        innerCounter++;
+            //    }
+            //    Console.WriteLine();
+            //    outerCounter--;
+            //    innerCounter = 0;
+            //}
+
+
+            //Console.WriteLine("*--------------------------------------");
+            //outerCounter = n;
+            //innerCounter = 1;
+
+            //outerCounter = n;
+            //innerCounter = 1;
+            //while (outerCounter > 0)
+            //{
+            //    while (innerCounter <= n)
+            //    {
+            //        if (innerCounter < outerCounter)
+            //        {
+            //            Console.Write(" ");
+            //        }
+            //        else
+            //        {
+            //            Console.Write("*");
+            //        }
+            //        innerCounter++;
+            //    }
+            //    Console.WriteLine();
+            //    outerCounter--;
+            //    innerCounter = 1;
+            //}
 
         }
     }

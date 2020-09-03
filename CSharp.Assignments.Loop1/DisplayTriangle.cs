@@ -29,7 +29,101 @@ namespace CSharp.Assignments.Loop1
             Console.Error.WriteLine("Enter the number of lines.");
             int n = Convert.ToInt32(Console.ReadLine());
 
-            // Write your codes here.
+            int outerCounter = 0;
+            int innerCounter = 0;
+
+            if (t == 'a')
+            {
+                while (outerCounter < n)
+                {
+                    while (innerCounter <= outerCounter)
+                    {
+                        Console.Write("*");
+                        innerCounter++;
+                    }
+                    Console.WriteLine();
+                    outerCounter++;
+                    innerCounter = 0;
+                }
+
+                outerCounter = 0;
+                innerCounter = 0;
+            }
+
+            else if (t == 'b')
+            {
+                outerCounter = n;
+
+                while (outerCounter > 0)
+                {
+                    while (innerCounter < outerCounter)
+                    {
+                        Console.Write("*");
+                        innerCounter++;
+                    }
+                    Console.WriteLine();
+                    outerCounter--;
+                    innerCounter = 0;
+                }
+
+                outerCounter = 0;
+                innerCounter = 0;
+            }
+
+            else if (t == 'c')
+            {
+                outerCounter = n;
+                innerCounter = 1;
+                while (outerCounter > 0)
+                {
+                    while (innerCounter <= n)
+                    {
+                        if (innerCounter <= n- outerCounter)
+                        {
+                            Console.Write(" ");
+                        }
+                        else
+                        {
+                            Console.Write("*");
+                        }
+                        innerCounter++;
+                    }
+                    Console.WriteLine();
+                    outerCounter--;
+                    innerCounter = 1;
+                }
+
+                outerCounter = 0;
+                innerCounter = 0;
+            }
+
+            else if (t == 'd')
+            {
+                outerCounter = n;
+                innerCounter = 1;
+                while (outerCounter > 0)
+                {
+                    while (innerCounter <= n)
+                    {
+                        if (innerCounter < outerCounter)
+                        {
+                            Console.Write(" ");
+                        }
+                        else
+                        {
+                            Console.Write("*");
+                        }
+                        innerCounter++;
+                    }
+                    Console.WriteLine();
+                    outerCounter--;
+                    innerCounter = 1;
+                }
+
+                outerCounter = 0;
+                innerCounter = 0;
+            }
+
             Console.ReadLine();
         }
     }
