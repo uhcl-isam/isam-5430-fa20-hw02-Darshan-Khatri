@@ -14,6 +14,23 @@ namespace CSharp.Assignments.Loop1
         {
             Console.WriteLine("Enter the last number of Fibonacci Sequence of numbers.");
             int end = int.Parse(Console.ReadLine());
+            int num1 = 0;
+            int num2 = 1;
+            int cumalativeSum = 0;
+
+            cumalativeSum = num1 + num2;
+            //0 1 1 2 3 5 8 13 21 34 55 89...
+            while (cumalativeSum < end)
+            {
+                num1 = num2;
+                num2 = cumalativeSum;
+                cumalativeSum = num1 + num2;
+                if (cumalativeSum > end)
+                {
+                    cumalativeSum = num2;
+                    break;
+                }
+            }
 
         }
     }

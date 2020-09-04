@@ -1,6 +1,7 @@
 ﻿using CSharp.Assignments.Loop1;
 using System;
 using System.Globalization;
+using System.Linq.Expressions;
 
 namespace CSharp.Assignments.Selection1
 {
@@ -191,6 +192,54 @@ namespace CSharp.Assignments.Selection1
             //    innerCounter = 1;
             //}
 
+            //***************************************************************************************
+            //Console.WriteLine("Enter the last number of Fibonacci Sequence of numbers.");
+            //int end = int.Parse(Console.ReadLine());
+            //int num1 = 0;
+            //int num2 = 1;
+            //int cumalativeSum = 0;
+
+            //cumalativeSum = num1 + num2;
+            ////0 1 1 2 3 5 8 13 21 34 55 89...
+            //while (cumalativeSum < end)
+            //{
+            //    num1 = num2;
+            //    num2 = cumalativeSum;
+            //    cumalativeSum = num1 + num2;
+            //    if (cumalativeSum > end)
+            //    {
+            //        cumalativeSum = num2;
+            //        break;
+            //    }
+            //}
+
+            //Console.WriteLine(cumalativeSum);
+            //*************************************************
+
+
+            //int totalMiles = 0;
+            //int totalGallons = 0;
+            //int miles = 0;
+            //// prompt user for non-negative miles and obtain the input from user
+            //while (miles >= 0)
+            //{
+            //    Console.Write("How many miles you have driven till now: ");
+            //    miles = Convert.ToInt32(Console.ReadLine());
+            //    Console.WriteLine();
+            //    Console.Write("Enter amount of gallons used to drive miles, you have mentioned above: ");
+            //    int Gallons = Convert.ToInt32(Console.ReadLine());
+            //    // codes go here.
+            //    decimal Average = (miles / Gallons);
+            //    Console.WriteLine($"Miles per gallon = {Average}");
+
+            //    totalMiles += miles;
+            //    totalGallons += Gallons;
+            //    decimal totalAverage = totalMiles / totalGallons;
+            //    Console.WriteLine($"Total miles per gallons = {totalAverage}");
+            //}
+
+            decimal  floating = ((decimal)7 / (decimal)3);
+            Console.WriteLine(floating);
         }
     }
 }
