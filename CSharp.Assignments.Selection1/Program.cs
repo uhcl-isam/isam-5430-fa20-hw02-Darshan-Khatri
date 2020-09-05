@@ -259,37 +259,63 @@ namespace CSharp.Assignments.Selection1
 
             //***********************LArgest**************
 
-            int counter = 1;
-            int number = 0;
-            int largest = 0;
-            int largest2 = 0;
-            // get first number and assign it to variable largest
-            while (counter < 11)
-            {
-                //3 10 2 5 8
+            //int counter = 1;
+            //int number = 0;
+            //int largest = 0;
+            //int largest2 = 0;
+            //// get first number and assign it to variable largest
+            //while (counter < 11)
+            //{
+            //    //3 10 2 5 8
 
-                Console.Write("Enter a number: ");
-                number = Convert.ToInt32(Console.ReadLine()); //8
-                if (counter == 1)
+            //    Console.Write("Enter a number: ");
+            //    number = Convert.ToInt32(Console.ReadLine()); //8
+            //    if (counter == 1)
+            //    {
+            //        largest = number; //largest = 3
+            //    }
+            //    else
+            //    {
+            //        if (number < largest && number > largest2)
+            //        {
+            //            largest2 = number; //largest2 = 8
+            //        }
+            //        else if (number > largest)
+            //        {
+            //            largest2 = largest; // 
+            //            largest = number; // largest = 10
+            //        }
+            //    }
+            //    counter++;
+            //}
+            //Console.WriteLine($"Largest = {largest}");
+            //Console.WriteLine($"Largest2 = {largest2}");
+            //************************************************************
+
+            //***********OddNumber*************************************
+
+            int startNum = 0;
+            Console.Error.WriteLine("Enter the starting number");
+            startNum = Convert.ToInt32(Console.ReadLine());
+            // Codes to enter start
+            int endNum = 0;
+            Console.Error.WriteLine("Enter the ending number");
+            endNum = Convert.ToInt32(Console.ReadLine());
+            // Codes to enter end.
+            //int number = 0;
+            while (startNum <= endNum)
+            {
+                if (startNum % 2 != 0)
                 {
-                    largest = number; //largest = 3
+                    Console.WriteLine(startNum);
+                    startNum += 2;
                 }
                 else
                 {
-                    if (number < largest && number > largest2)
-                    {
-                        largest2 = number; //largest2 = 8
-                    }
-                    else if (number > largest)
-                    {
-                        largest2 = largest; // 
-                        largest = number; // largest = 10
-                    }
+                    startNum++;
+                    //Console.WriteLine(startNum);
                 }
-                counter++;
             }
-            Console.WriteLine($"Largest = {largest}");
-            Console.WriteLine($"Largest2 = {largest2}");
         }
     }
 }
