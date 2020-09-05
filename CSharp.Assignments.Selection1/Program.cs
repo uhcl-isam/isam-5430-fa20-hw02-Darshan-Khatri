@@ -246,16 +246,50 @@ namespace CSharp.Assignments.Selection1
             //int floating2 = ((123454321) % 10);
             //Console.WriteLine(floating2);
 
-            string Mystr = "";
-            int number = 123454321;
-            Mystr = number.ToString();
-            Console.WriteLine($"Original String = {Mystr}");
-            string sub1 = Mystr.Substring(0, 5);
-            Console.WriteLine($"Sub1 String = {sub1}");
+            //string Mystr = "";
+            //int number = 123454321;
+            //Mystr = number.ToString();
+            //Console.WriteLine($"Original String = {Mystr}");
+            //string sub1 = Mystr.Substring(0, 5);
+            //Console.WriteLine($"Sub1 String = {sub1}");
 
-            string sub2 = Mystr.Substring(4);
-            Console.WriteLine($"Sub2 String = {sub2}");
-            Console.WriteLine(Convert.ToInt32(sub2));
+            //string sub2 = Mystr.Substring(4);
+            //Console.WriteLine($"Sub2 String = {sub2}");
+            //Console.WriteLine(Convert.ToInt32(sub2));
+
+            //***********************LArgest**************
+
+            int counter = 1;
+            int number = 0;
+            int largest = 0;
+            int largest2 = 0;
+            // get first number and assign it to variable largest
+            while (counter < 11)
+            {
+                //3 10 2 5 8
+
+                Console.Write("Enter a number: ");
+                number = Convert.ToInt32(Console.ReadLine()); //8
+                if (counter == 1)
+                {
+                    largest = number; //largest = 3
+                }
+                else
+                {
+                    if (number < largest && number > largest2)
+                    {
+                        largest2 = number; //largest2 = 8
+                    }
+                    else if (number > largest)
+                    {
+                        largest2 = largest; // 
+                        largest = number; // largest = 10
+                    }
+                }
+                counter++;
+            }
+            Console.WriteLine($"Largest = {largest}");
+            Console.WriteLine($"Largest2 = {largest2}");
         }
     }
 }
