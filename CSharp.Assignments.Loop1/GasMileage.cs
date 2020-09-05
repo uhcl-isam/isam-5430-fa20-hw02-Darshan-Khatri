@@ -26,13 +26,13 @@ namespace CSharp.Assignments.Loop1
             int totalGallons = 0;
             int miles = 0;
             // prompt user for non-negative miles and obtain the input from user
+            Console.Write("How many miles you have driven till now: ");
+            miles = Convert.ToInt32(Console.ReadLine());
             while (miles >= 0)
             {
-                Console.Write("How many miles you have driven till now: ");
-                miles = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine();
+                
                 Console.Write("Enter amount of gallons used to drive miles, you have mentioned above: ");
-                int Gallons = Convert.ToInt32(Console.ReadLine());
+                int Gallons = Math.Abs(Convert.ToInt32(Console.ReadLine()));
                 // codes go here.
                 decimal Average = (decimal)miles / (decimal)Gallons;
                 Console.WriteLine($"Miles per gallon = {Average}");
@@ -41,6 +41,11 @@ namespace CSharp.Assignments.Loop1
                 totalGallons += Gallons;
                 decimal totalAverage = (decimal)totalMiles / (decimal)totalGallons;
                 Console.WriteLine($"Total miles per gallons = {totalAverage}");
+                Console.WriteLine();
+
+                Console.Write("How many miles you have driven till now: ");
+                miles = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine();
             }
 
         }

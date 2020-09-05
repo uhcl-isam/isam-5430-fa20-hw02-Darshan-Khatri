@@ -18,7 +18,22 @@ namespace CSharp.Assignments.Loop1
         public static void Main()
         {
             // enter sentinel inputs
+            int number = 0;
+            Console.Write("Enter 9 digit number : ");
+            number = Convert.ToInt32(Console.ReadLine());
+
+            while ((number / Math.Pow(10, 9)) > 0)
+            {
+                Console.WriteLine("Entered number is not a 9 digit number, try again.");
+                Console.Write("Enter 9 digit number : ");
+                number = Convert.ToInt32(Console.ReadLine());
+            }
             // then check the palindrome only once.
+            string NumberString = number.ToString();
+            int sub1 = Convert.ToInt32(NumberString.Substring(0,5));
+            int sub2 = Convert.ToInt32(NumberString.Substring(4));
+            
+            
         }
     }
 }

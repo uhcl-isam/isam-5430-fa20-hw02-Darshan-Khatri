@@ -1,6 +1,7 @@
 ﻿using CSharp.Assignments.Loop1;
 using System;
 using System.Globalization;
+using System.Linq;
 using System.Linq.Expressions;
 
 namespace CSharp.Assignments.Selection1
@@ -238,8 +239,23 @@ namespace CSharp.Assignments.Selection1
             //    Console.WriteLine($"Total miles per gallons = {totalAverage}");
             //}
 
-            decimal  floating = ((decimal)7 / (decimal)3);
-            Console.WriteLine(floating);
+            //int floating = ((123456789) / (int)Math.Pow(10, 8));
+            //Console.WriteLine(floating);
+            //int floating1 = ((123454321) / (int)Math.Pow(10, 5));
+            //Console.WriteLine(floating1);
+            //int floating2 = ((123454321) % 10);
+            //Console.WriteLine(floating2);
+
+            string Mystr = "";
+            int number = 123454321;
+            Mystr = number.ToString();
+            Console.WriteLine($"Original String = {Mystr}");
+            string sub1 = Mystr.Substring(0, 5);
+            Console.WriteLine($"Sub1 String = {sub1}");
+
+            string sub2 = Mystr.Substring(4);
+            Console.WriteLine($"Sub2 String = {sub2}");
+            Console.WriteLine(Convert.ToInt32(sub2));
         }
     }
 }
