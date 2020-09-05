@@ -294,27 +294,63 @@ namespace CSharp.Assignments.Selection1
 
             //***********OddNumber*************************************
 
-            int startNum = 0;
-            Console.Error.WriteLine("Enter the starting number");
-            startNum = Convert.ToInt32(Console.ReadLine());
-            // Codes to enter start
-            int endNum = 0;
-            Console.Error.WriteLine("Enter the ending number");
-            endNum = Convert.ToInt32(Console.ReadLine());
-            // Codes to enter end.
-            //int number = 0;
-            while (startNum <= endNum)
+            //int startNum = 0;
+            //Console.Error.WriteLine("Enter the starting number");
+            //startNum = Convert.ToInt32(Console.ReadLine());
+            //// Codes to enter start
+            //int endNum = 0;
+            //Console.Error.WriteLine("Enter the ending number");
+            //endNum = Convert.ToInt32(Console.ReadLine());
+            //// Codes to enter end.
+            ////int number = 0;
+            //while (startNum <= endNum)
+            //{
+            //    if (startNum % 2 != 0)
+            //    {
+            //        Console.WriteLine(startNum);
+            //        startNum += 2;
+            //    }
+            //    else
+            //    {
+            //        startNum++;
+            //        //Console.WriteLine(startNum);
+            //    }
+            //}
+
+            //*******************************************************************
+
+            //**************SquareUp******************************
+
+            int number = 0;
+            Console.Write("Enter number: ");
+            number = Convert.ToInt32(Console.ReadLine());
+
+
+            int SaveNum = number;
+            int OuterLoop = 1;
+
+            while (OuterLoop <= number)
             {
-                if (startNum % 2 != 0)
+                int InnerLoop = 1;
+                int CopyOuterLoop = OuterLoop;
+                while (InnerLoop <= number)
                 {
-                    Console.WriteLine(startNum);
-                    startNum += 2;
+
+                    if (InnerLoop >= SaveNum)
+                    {
+                        Console.Write($"{CopyOuterLoop}, ");
+                        CopyOuterLoop--;
+                    }
+                    else
+                    {
+                        Console.Write($"0, ");
+                    }
+                    InnerLoop++;
+
                 }
-                else
-                {
-                    startNum++;
-                    //Console.WriteLine(startNum);
-                }
+                Console.WriteLine();
+                OuterLoop++;
+                SaveNum--;
             }
         }
     }

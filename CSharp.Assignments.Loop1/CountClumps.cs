@@ -15,9 +15,9 @@ namespace CSharp.Assignments.Loop1
     public class CountClumps
     {
         public static void Main()
-        {
-            
+        {            
             // Write your codes here
+
         }
     }
 }
