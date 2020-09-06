@@ -17,21 +17,59 @@ namespace CSharp.Assignments.Loop1
         public static void Main()
         {
             // Write your codes here
+            //int inputNum = 0;
+            //Console.Write("Enter a number: ");
+
+            //inputNum = Convert.ToInt32(Console.ReadLine());
+            //int lastNum = 0;
+            //lastNum = inputNum;
+
+            //int groupCounter = 0;
+
+            //int clumps = 0;
+
+            //int i = 0;
+
+            //while (inputNum >= 0)
+            //{
+            //    if (inputNum == lastNum && i > 0)
+            //    {
+            //        groupCounter++;
+            //    }
+            //    else
+            //    {
+            //        if (groupCounter >= 1)
+            //        {
+            //            clumps++;
+            //            groupCounter = 0;
+            //        }
+            //        lastNum = inputNum;
+            //    }
+
+            //    Console.Write("Enter a number: ");
+            //    inputNum = Convert.ToInt32(Console.ReadLine());
+            //    if (inputNum < 0)
+            //    {
+            //        clumps++;
+            //    }
+            //    i++;
+            //}
+            //Console.WriteLine($"Number of clumps are is equal to: {clumps}");
+
             int inputNum = 0;
-            Console.Write("Enter a number: ");
-
-            inputNum = Convert.ToInt32(Console.ReadLine());
-            int lastNum = 0;
-            lastNum = inputNum;
-
+            string StringNumber = "";
+            int lastNum = -1;
             int groupCounter = 0;
-
             int clumps = 0;
-
             int i = 0;
 
-            while (inputNum >= 0)
+            Console.Write("Enter a number: ");
+            ConsoleKeyInfo cki;
+            cki = Console.ReadKey(); Console.WriteLine();
+            do
             {
+                StringNumber = cki.KeyChar.ToString();
+                inputNum = Convert.ToInt32(StringNumber);
                 if (inputNum == lastNum && i > 0)
                 {
                     groupCounter++;
@@ -47,13 +85,18 @@ namespace CSharp.Assignments.Loop1
                 }
 
                 Console.Write("Enter a number: ");
-                inputNum = Convert.ToInt32(Console.ReadLine());
-                if (inputNum < 0)
+                cki = Console.ReadKey(); Console.WriteLine();
+
+                if (cki.Key == ConsoleKey.Z || cki.Modifiers == ConsoleModifiers.Control)
                 {
-                    clumps++;
+                    if (groupCounter >= 1)
+                    {
+                        clumps++;
+                    }
                 }
                 i++;
-            }
+
+            } while (cki.Key != ConsoleKey.Z || cki.Modifiers != ConsoleModifiers.Control);
             Console.WriteLine($"Number of clumps are is equal to: {clumps}");
 
         }
