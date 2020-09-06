@@ -321,37 +321,138 @@ namespace CSharp.Assignments.Selection1
 
             //**************SquareUp******************************
 
-            int number = 0;
-            Console.Write("Enter number: ");
-            number = Convert.ToInt32(Console.ReadLine());
+            //int number = 0;
+            //Console.Write("Enter number: ");
+            //number = Convert.ToInt32(Console.ReadLine());
 
 
-            int SaveNum = number;
-            int OuterLoop = 1;
+            //int SaveNum = number;
+            //int OuterLoop = 1;
 
-            while (OuterLoop <= number)
-            {
-                int InnerLoop = 1;
-                int CopyOuterLoop = OuterLoop;
-                while (InnerLoop <= number)
-                {
+            //while (OuterLoop <= number)
+            //{
+            //    int InnerLoop = 1;
+            //    int CopyOuterLoop = OuterLoop;
+            //    while (InnerLoop <= number)
+            //    {
 
-                    if (InnerLoop >= SaveNum)
-                    {
-                        Console.Write($"{CopyOuterLoop}, ");
-                        CopyOuterLoop--;
-                    }
-                    else
-                    {
-                        Console.Write($"0, ");
-                    }
-                    InnerLoop++;
+            //        if (InnerLoop >= SaveNum)
+            //        {
+            //            Console.Write($"{CopyOuterLoop}, ");
+            //            CopyOuterLoop--;
+            //        }
+            //        else
+            //        {
+            //            Console.Write($"0, ");
+            //        }
+            //        InnerLoop++;
 
-                }
-                Console.WriteLine();
-                OuterLoop++;
-                SaveNum--;
-            }
+            //    }
+            //    Console.WriteLine();
+            //    OuterLoop++;
+            //    SaveNum--;
+            //}
+
+            //*************************CountClumps*******************
+
+            //Write your codes here
+            //int inputNum = 0;
+            //Console.Write("Enter a number: ");
+            //string StringNumber = Console.ReadLine();
+            //inputNum = Convert.ToInt32(StringNumber);
+            //int lastNum = 0;
+            //lastNum = inputNum;
+
+            //int groupCounter = 0;
+
+            //int clumps = 0;
+
+            //int i = 0;
+
+            //while (StringNumber != "^Z")
+            //{
+            //    inputNum = Convert.ToInt32(StringNumber);
+            //    if (inputNum == lastNum && i > 0)
+            //    {
+            //        groupCounter++;
+            //    }
+            //    else
+            //    {
+            //        if (groupCounter >= 1)
+            //        {
+            //            clumps++;
+            //            groupCounter = 0;
+            //        }
+            //        lastNum = inputNum;
+            //    }
+
+            //    Console.Write("Enter a number: ");
+            //    StringNumber = Console.ReadLine();
+            //    //inputNum = Convert.ToInt32(Console.ReadLine());
+            //    if (StringNumber == "^z" || StringNumber == "^Z")
+            //    {
+            //        clumps++;
+            //    }
+            //    inputNum = Convert.ToInt32(StringNumber);
+            //    i++;
+            //}
+            //Console.WriteLine($"Number of clumps are is equal to: {clumps}");
+
+            //Console.WriteLine($"The character {'B'} has the value {(int)'B'}");
+            //Console.WriteLine($"The character {'C'} has the value {(int)'C'}");
+            //Console.WriteLine($"The character {'a'} has the value {(int)'a'}");
+
+            //Console.Write("Enter something: ");
+            //string Str = Console.ReadLine();
+
+            //Console.Write("Enter something: ");
+            ////string Str = Console.ReadKey();
+            //ConsoleKeyInfo Keypressed;
+            //Keypressed =(Console.ReadKey());
+            //Console.WriteLine();
+            //Console.WriteLine(Keypressed.Key);
+
+            //while (!((Str == "^Z") || (Str == "z")))
+            //{
+            //    Console.WriteLine("You will see me until you press \"^Z\"");
+            //    Console.Write("Enter something: ");
+            //    Str = Console.ReadLine();
+            //}
+
+            //var key = default(ConsoleKeyInfo);
+            //do
+            //{
+            //    while (!Console.KeyAvailable)
+            //    {
+            //        // Do stuff
+            //        Console.WriteLine("You will see me until you press \"Ctrl-Z\"");
+            //    }
+            //    key = Console.ReadKey();
+            //} while (key.Key != ConsoleKey.Z || key.Modifiers != ConsoleModifiers.Control);
+
+            ConsoleKeyInfo cki;
+            // Prevent example from ending if CTL+C is pressed.
+            Console.TreatControlCAsInput = true;
+
+
+            Console.WriteLine("Press any combination of CTL, ALT, and SHIFT, and a console key.");
+            Console.WriteLine("Press the Escape (Esc) key to quit: \n");
+            cki = Console.ReadKey();
+            Console.WriteLine();
+            Console.WriteLine($"cki.Key = {cki.Key}");
+            Console.WriteLine($"cki.KeyChar = {cki.KeyChar}");
+            Console.WriteLine($"cki.Modifiers = {cki.Modifiers}");
+            Console.WriteLine($"ConsoleModifiers.Control = {ConsoleModifiers.Control}");
+
+            //do
+            //{
+            //    cki = Console.ReadKey(true);
+            //    Console.Write("You pressed ");
+            //    if ((cki.Modifiers & ConsoleModifiers.Alt) != 0) Console.Write("ALT+");
+            //    if ((cki.Modifiers & ConsoleModifiers.Shift) != 0) Console.Write("SHIFT+");
+            //    if ((cki.Modifiers & ConsoleModifiers.Control) != 0) Console.Write("CTL+");
+            //    Console.WriteLine("{0} (character '{1}')", cki.Key, cki.KeyChar);
+            //} while (cki.Key != ConsoleKey.Escape);
         }
     }
 }

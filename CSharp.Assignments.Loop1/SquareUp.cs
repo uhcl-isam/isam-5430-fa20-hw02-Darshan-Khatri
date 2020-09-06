@@ -26,6 +26,7 @@ namespace CSharp.Assignments.Loop1
             {
                 int InnerLoop = 1;
                 int CopyOuterLoop = OuterLoop;
+
                 while (InnerLoop <= number)
                 {
 
