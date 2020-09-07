@@ -356,50 +356,48 @@ namespace CSharp.Assignments.Selection1
             //*************************CountClumps*******************
 
             //Write your codes here
-            //int inputNum = 0;
-            //string StringNumber = "";
-            //int lastNum = -1;
-            //int groupCounter = 0;
-            //int clumps = 0;
-            //int i = 0;
+            int inputNum = 0;
+            string StringNumber = "";
+            int lastNum = -1;
+            int groupCounter = 0;
+            int clumps = 0;
+            int i = 0;
 
-            //Console.Write("Enter a number: ");
-            //ConsoleKeyInfo cki;
-            //cki = Console.ReadKey(); Console.WriteLine();
+            Console.Write("Enter a number: ");
+            StringNumber = Console.ReadLine();
 
+            do
+            {
+                inputNum = Convert.ToInt32(StringNumber);
+                if (inputNum == lastNum && i > 0)
+                {
+                    groupCounter++;
+                }
+                else
+                {
+                    if (groupCounter >= 1)
+                    {
+                        clumps++;
+                        groupCounter = 0;
+                    }
+                    lastNum = inputNum;
+                }
 
-            //do
-            //{
-            //    StringNumber = cki.KeyChar.ToString();
-            //    inputNum = Convert.ToInt32(StringNumber);
-            //    if (inputNum == lastNum && i > 0)
-            //    {
-            //        groupCounter++;
-            //    }
-            //    else
-            //    {
-            //        if (groupCounter >= 1)
-            //        {
-            //            clumps++;
-            //            groupCounter = 0;
-            //        }
-            //        lastNum = inputNum;
-            //    }
+                Console.Write("Enter a number: ");
 
-            //    Console.Write("Enter a number: ");
-            //    cki = Console.ReadKey(); Console.WriteLine();
+                StringNumber = Console.ReadLine();
 
-            //    if (cki.Key == ConsoleKey.Z || cki.Modifiers == ConsoleModifiers.Control)
-            //    {
-            //        if (groupCounter >= 1)
-            //        {
-            //            clumps++;
-            //        }
-            //    }
+                if (StringNumber == null)
+                {
+                    if (groupCounter >= 1)
+                    {
+                        clumps++;
+                    }
+                }
 
-            //    i++;
-            //} while (cki.Key != ConsoleKey.Z || cki.Modifiers != ConsoleModifiers.Control);
-            //Console.WriteLine($"Number of clumps are is equal to: {clumps}");
+                i++;
+            } while (StringNumber != null);
+            Console.WriteLine($"Number of clumps are is equal to: {clumps}");
 
             //Console.WriteLine($"The character {'B'} has the value {(int)'B'}");
             //Console.WriteLine($"The character {'C'} has the value {(int)'C'}");
@@ -469,7 +467,7 @@ namespace CSharp.Assignments.Selection1
             //    Console.WriteLine($"Sum of added number is = {cumulativeSumOfIncresedNumber}");
             //}
 
-            
+
 
         }
 
