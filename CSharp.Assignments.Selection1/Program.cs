@@ -356,50 +356,50 @@ namespace CSharp.Assignments.Selection1
             //*************************CountClumps*******************
 
             //Write your codes here
-            int inputNum = 0;
-            string StringNumber = "";
-            int lastNum = -1;
-            int groupCounter = 0;
-            int clumps = 0;
-            int i = 0;
+            //int inputNum = 0;
+            //string StringNumber = "";
+            //int lastNum = -1;
+            //int groupCounter = 0;
+            //int clumps = 0;
+            //int i = 0;
 
-            Console.Write("Enter a number: ");
-            ConsoleKeyInfo cki;
-            cki = Console.ReadKey(); Console.WriteLine();
+            //Console.Write("Enter a number: ");
+            //ConsoleKeyInfo cki;
+            //cki = Console.ReadKey(); Console.WriteLine();
 
 
-            do
-            {
-                StringNumber = cki.KeyChar.ToString();
-                inputNum = Convert.ToInt32(StringNumber);
-                if (inputNum == lastNum && i > 0)
-                {
-                    groupCounter++;
-                }
-                else
-                {
-                    if (groupCounter >= 1)
-                    {
-                        clumps++;
-                        groupCounter = 0;
-                    }
-                    lastNum = inputNum;
-                }
+            //do
+            //{
+            //    StringNumber = cki.KeyChar.ToString();
+            //    inputNum = Convert.ToInt32(StringNumber);
+            //    if (inputNum == lastNum && i > 0)
+            //    {
+            //        groupCounter++;
+            //    }
+            //    else
+            //    {
+            //        if (groupCounter >= 1)
+            //        {
+            //            clumps++;
+            //            groupCounter = 0;
+            //        }
+            //        lastNum = inputNum;
+            //    }
 
-                Console.Write("Enter a number: ");
-                cki = Console.ReadKey(); Console.WriteLine();
+            //    Console.Write("Enter a number: ");
+            //    cki = Console.ReadKey(); Console.WriteLine();
 
-                if (cki.Key == ConsoleKey.Z || cki.Modifiers == ConsoleModifiers.Control)
-                {
-                    if (groupCounter >= 1)
-                    {
-                        clumps++;
-                    }
-                }
-                
-                i++;
-            } while (cki.Key != ConsoleKey.Z || cki.Modifiers != ConsoleModifiers.Control);
-            Console.WriteLine($"Number of clumps are is equal to: {clumps}");
+            //    if (cki.Key == ConsoleKey.Z || cki.Modifiers == ConsoleModifiers.Control)
+            //    {
+            //        if (groupCounter >= 1)
+            //        {
+            //            clumps++;
+            //        }
+            //    }
+
+            //    i++;
+            //} while (cki.Key != ConsoleKey.Z || cki.Modifiers != ConsoleModifiers.Control);
+            //Console.WriteLine($"Number of clumps are is equal to: {clumps}");
 
             //Console.WriteLine($"The character {'B'} has the value {(int)'B'}");
             //Console.WriteLine($"The character {'C'} has the value {(int)'C'}");
@@ -421,7 +421,52 @@ namespace CSharp.Assignments.Selection1
             //Console.WriteLine($"cki.Modifiers = {cki.Modifiers}");
             //Console.WriteLine($"ConsoleModifiers.Control = {ConsoleModifiers.Control}");
 
+            //**********************************************************************
 
+            //****************AscendingFillers**************************************
+
+            // Complete your loop codes here.
+            int LastMaxNumber = 0;
+            int inputNumber = 0;
+
+            int cumulativeSumOfIncresedNumber = 0;
+
+            Console.Write("Enter a number: ");
+            inputNumber = Convert.ToInt32(Console.ReadLine());
+
+            if (inputNumber >= 0)
+            {
+                do
+                {
+                    if (inputNumber > LastMaxNumber)
+                    {
+                        LastMaxNumber = inputNumber;
+                    }
+                    else if (inputNumber == LastMaxNumber)
+                    {
+                        inputNumber++;
+                        LastMaxNumber = inputNumber;
+                        cumulativeSumOfIncresedNumber++;
+                    }
+                    else if (inputNumber < LastMaxNumber)
+                    {
+                        int Diff = LastMaxNumber - inputNumber;
+                        LastMaxNumber = inputNumber + Diff + 1;
+
+                        cumulativeSumOfIncresedNumber += Diff + 1;
+                    }
+
+                    //Console.WriteLine($"{LastMaxNumber} ");
+                    //Console.WriteLine("Current sum: " + cumulativeSumOfIncresedNumber);
+                    Console.Write("Enter a number: ");
+                    inputNumber = Convert.ToInt32(Console.ReadLine());
+                    if (inputNumber == 0)
+                    {
+                        LastMaxNumber = -1;
+                    }
+                } while (inputNumber >= 0);
+                Console.WriteLine($"Sum of added number is = {cumulativeSumOfIncresedNumber}");
+            }
         }
     }
 }

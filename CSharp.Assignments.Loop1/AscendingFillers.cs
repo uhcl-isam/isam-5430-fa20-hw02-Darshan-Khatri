@@ -17,6 +17,47 @@ namespace CSharp.Assignments.Loop1
         public static void Main()
         {
             // Complete your loop codes here.
+            int LastMaxNumber = 0;
+            int inputNumber = 0;
+
+            int cumulativeSumOfIncresedNumber = 0;
+
+            Console.Write("Enter a number: ");
+            inputNumber = Convert.ToInt32(Console.ReadLine());
+
+            if (inputNumber >= 0)
+            {
+                do
+                {
+                    if (inputNumber > LastMaxNumber)
+                    {
+                        LastMaxNumber = inputNumber;
+                    }
+                    else if (inputNumber == LastMaxNumber)
+                    {
+                        inputNumber++;
+                        LastMaxNumber = inputNumber;
+                        cumulativeSumOfIncresedNumber++;
+                    }
+                    else if (inputNumber < LastMaxNumber)
+                    {
+                        int Diff = LastMaxNumber - inputNumber;
+                        LastMaxNumber = inputNumber + Diff + 1;
+
+                        cumulativeSumOfIncresedNumber += Diff + 1;
+                    }
+
+                    //Console.WriteLine($"{LastMaxNumber} ");
+                    //Console.WriteLine("Current sum: " + cumulativeSumOfIncresedNumber);
+                    Console.Write("Enter a number: ");
+                    inputNumber = Convert.ToInt32(Console.ReadLine());
+                    if (inputNumber == 0)
+                    {
+                        LastMaxNumber = -1;
+                    }
+                } while (inputNumber >= 0);
+                Console.WriteLine($"Sum of added number is = {cumulativeSumOfIncresedNumber}");
+            }
         }
     }
 }
