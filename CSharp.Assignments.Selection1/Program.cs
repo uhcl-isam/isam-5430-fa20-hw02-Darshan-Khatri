@@ -425,48 +425,54 @@ namespace CSharp.Assignments.Selection1
 
             //****************AscendingFillers**************************************
 
-            // Complete your loop codes here.
-            int LastMaxNumber = 0;
-            int inputNumber = 0;
+            //int LastMaxNumber = -2;
+            //int inputNumber = 0;
 
-            int cumulativeSumOfIncresedNumber = 0;
+            //int cumulativeSumOfIncresedNumber = 0;
 
-            Console.Write("Enter a number: ");
-            inputNumber = Convert.ToInt32(Console.ReadLine());
+            //Console.Write("Enter a number: ");
+            //string inputString = Console.ReadLine();
+            //inputNumber = Convert.ToInt32(inputString);
 
-            if (inputNumber >= 0)
-            {
-                do
-                {
-                    if (inputNumber > LastMaxNumber)
-                    {
-                        LastMaxNumber = inputNumber;
-                    }
-                    else if (inputNumber == LastMaxNumber)
-                    {
-                        inputNumber++;
-                        LastMaxNumber = inputNumber;
-                        cumulativeSumOfIncresedNumber++;
-                    }
-                    else if (inputNumber < LastMaxNumber)
-                    {
-                        int Diff = LastMaxNumber - inputNumber;
-                        LastMaxNumber = inputNumber + Diff + 1;
+            //if (inputNumber >= 0 || inputString != null)
+            //{
+            //    do
+            //    {
+            //        if (inputNumber > LastMaxNumber)
+            //        {
+            //            LastMaxNumber = inputNumber;
+            //        }
+            //        else if (inputNumber == LastMaxNumber)
+            //        {
+            //            inputNumber++;
+            //            LastMaxNumber = inputNumber;
+            //            cumulativeSumOfIncresedNumber++;
+            //        }
+            //        else if (inputNumber < LastMaxNumber)
+            //        {
+            //            int Diff = LastMaxNumber - inputNumber;
+            //            LastMaxNumber = inputNumber + Diff + 1;
 
-                        cumulativeSumOfIncresedNumber += Diff + 1;
-                    }
+            //            cumulativeSumOfIncresedNumber += Diff + 1;
+            //        }
 
-                    //Console.WriteLine($"{LastMaxNumber} ");
-                    //Console.WriteLine("Current sum: " + cumulativeSumOfIncresedNumber);
-                    Console.Write("Enter a number: ");
-                    inputNumber = Convert.ToInt32(Console.ReadLine());
-                    if (inputNumber == 0)
-                    {
-                        LastMaxNumber = -1;
-                    }
-                } while (inputNumber >= 0);
-                Console.WriteLine($"Sum of added number is = {cumulativeSumOfIncresedNumber}");
-            }
+            //        //Console.WriteLine($"{LastMaxNumber} ");
+            //        //Console.WriteLine("Current sum: " + cumulativeSumOfIncresedNumber);
+            //        Console.Write("Enter a number: ");
+            //        inputString = Console.ReadLine();
+            //        inputNumber = Convert.ToInt32(inputString);
+            //        if (inputNumber == 0)
+            //        {
+            //            LastMaxNumber = -1;
+            //        }
+            //    } while (inputNumber >= 0 && inputString != null);
+            //    Console.WriteLine($"Sum of added number is = {cumulativeSumOfIncresedNumber}");
+            //}
+
+            
+
         }
+
+
     }
 }
