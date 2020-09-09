@@ -29,9 +29,9 @@ namespace CSharp.Assignments.Loop1
                 number = Convert.ToInt32(Console.ReadLine());
             }
             // then check the palindrome only once.
-            string NumberString = number.ToString();
-            int sub1 = Convert.ToInt32(NumberString.Substring(0,5));
-            int sub2 = Convert.ToInt32(NumberString.Substring(4));
+            //string NumberString = number.ToString();
+            //int sub1 = Convert.ToInt32(NumberString.Substring(0,5));
+            //int sub2 = Convert.ToInt32(NumberString.Substring(4));
             
             
         }

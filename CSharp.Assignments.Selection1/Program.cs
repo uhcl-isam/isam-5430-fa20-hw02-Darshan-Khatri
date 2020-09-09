@@ -268,11 +268,12 @@ namespace CSharp.Assignments.Selection1
             //{
             //    //3 10 2 5 8
 
-            //    Console.Write("Enter a number: ");
+            //    Console.Write($"Enter a {counter} number: ");
             //    number = Convert.ToInt32(Console.ReadLine()); //8
             //    if (counter == 1)
             //    {
             //        largest = number; //largest = 3
+            //        largest2 = number;
             //    }
             //    else
             //    {
@@ -285,11 +286,63 @@ namespace CSharp.Assignments.Selection1
             //            largest2 = largest; // 
             //            largest = number; // largest = 10
             //        }
+            //        else if (number > largest && number > largest2)
+            //        {
+            //            largest = number;
+            //        }
+            //        else if (largest == largest2)
+            //        {
+            //            largest = number;
+            //            largest2 = number;
+            //        }
             //    }
             //    counter++;
             //}
             //Console.WriteLine($"Largest = {largest}");
             //Console.WriteLine($"Largest2 = {largest2}");
+
+
+            int counter = 1;
+            int number = 0;
+            int largest = 0;
+            int largest2 = 0;
+            // get first number and assign it to variable largest
+
+            while (counter <= 10)
+            {
+                //3 10 2 5 8
+
+                Console.Write($"Enter a {counter} number: ");
+                number = Convert.ToInt32(Console.ReadLine()); //8
+                if (counter == 1)
+                {
+                    largest = number; //largest = 3
+                    largest2 = number;
+                }
+                else
+                {
+                    if (number < largest && number > largest2)
+                    {
+                        largest2 = number; //largest2 = 8
+                    }
+                    else if (largest == number)
+                    {
+                        largest2 = number;
+                    }
+                    else if (number > largest)
+                    {
+                        largest2 = largest; // 
+                        largest = number; // largest = 10
+                    }
+                    else if (counter == 2 && number < largest && number < largest2)
+                    {
+                        largest2 = number;
+                    }
+                }
+                counter++;
+            }
+            Console.Write($"{largest} {largest2}");
+
             //************************************************************
 
             //***********OddNumber*************************************
@@ -356,48 +409,48 @@ namespace CSharp.Assignments.Selection1
             //*************************CountClumps*******************
 
             //Write your codes here
-            int inputNum = 0;
-            string StringNumber = "";
-            int lastNum = -1;
-            int groupCounter = 0;
-            int clumps = 0;
-            int i = 0;
+            //int inputNum = 0;
+            //string StringNumber = "";
+            //int lastNum = -1;
+            //int groupCounter = 0;
+            //int clumps = 0;
+            //int i = 0;
 
-            Console.Write("Enter a number: ");
-            StringNumber = Console.ReadLine();
+            //Console.Write("Enter a number: ");
+            //StringNumber = Console.ReadLine();
 
-            do
-            {
-                inputNum = Convert.ToInt32(StringNumber);
-                if (inputNum == lastNum && i > 0)
-                {
-                    groupCounter++;
-                }
-                else
-                {
-                    if (groupCounter >= 1)
-                    {
-                        clumps++;
-                        groupCounter = 0;
-                    }
-                    lastNum = inputNum;
-                }
+            //do
+            //{
+            //    inputNum = Convert.ToInt32(StringNumber);
+            //    if (inputNum == lastNum && i > 0)
+            //    {
+            //        groupCounter++;
+            //    }
+            //    else
+            //    {
+            //        if (groupCounter >= 1)
+            //        {
+            //            clumps++;
+            //            groupCounter = 0;
+            //        }
+            //        lastNum = inputNum;
+            //    }
 
-                Console.Write("Enter a number: ");
+            //    Console.Write("Enter a number: ");
 
-                StringNumber = Console.ReadLine();
+            //    StringNumber = Console.ReadLine();
 
-                if (StringNumber == null)
-                {
-                    if (groupCounter >= 1)
-                    {
-                        clumps++;
-                    }
-                }
+            //    if (StringNumber == null)
+            //    {
+            //        if (groupCounter >= 1)
+            //        {
+            //            clumps++;
+            //        }
+            //    }
 
-                i++;
-            } while (StringNumber != null);
-            Console.WriteLine($"Number of clumps are is equal to: {clumps}");
+            //    i++;
+            //} while (StringNumber != null);
+            //Console.WriteLine($"Number of clumps are is equal to: {clumps}");
 
             //Console.WriteLine($"The character {'B'} has the value {(int)'B'}");
             //Console.WriteLine($"The character {'C'} has the value {(int)'C'}");
@@ -467,7 +520,18 @@ namespace CSharp.Assignments.Selection1
             //    Console.WriteLine($"Sum of added number is = {cumulativeSumOfIncresedNumber}");
             //}
 
+            //string input = "";
+            //Console.Write("Enter something: ");
+            //input = Console.ReadLine();
 
+            //if (input == null)
+            //{
+            //    Console.WriteLine("Ctrl+z is pressed");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Anything else is pressed");
+            //}
 
         }
 
