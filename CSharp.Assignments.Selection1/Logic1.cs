@@ -259,7 +259,55 @@ namespace CSharp.Assignments.Loop1
         {
             //1357743 -> True
             //3454326 -> False
-            if (number / 100 <= 0)
+            double number1 = Convert.ToInt32(number);
+            string numString = number1.ToString();
+            int NumOfDigit = numString.Length;
+            int LastNumber = 0;
+            int counter = NumOfDigit;
+            double division = number1;
+            bool redFlag = true;
+            int mod = (int)division % 10;
+
+            if (NumOfDigit > 2)
+            {
+
+                while (division > 0 || counter > 0)
+                {
+                    mod = (int)division % 10;
+
+
+                    if (((NumOfDigit - 1) / 2) + 2 <= counter)
+                    {
+                        if (((int)division % 10) < LastNumber && counter != NumOfDigit)
+                        {
+                            redFlag = false;
+                        }
+                    }
+                    else if (((NumOfDigit - 1) / 2) + 1 == counter) { }
+                    else if (((NumOfDigit - 1) / 2) >= counter)
+                    {
+                        if ((int)division % 10 > LastNumber)
+                        {
+                            redFlag = false;
+                        }
+                    }
+
+
+                    LastNumber = mod;
+                    division = (division / 10);
+                    division = Math.Truncate(division);
+                    counter--;
+                    Console.WriteLine();
+                    if (!redFlag)
+                    {
+                        break;
+                    }
+
+                }
+
+                return redFlag;
+            }
+            else
             {
                 return false;
             }
