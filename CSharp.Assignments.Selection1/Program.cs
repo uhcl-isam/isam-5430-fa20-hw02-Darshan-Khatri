@@ -533,7 +533,10 @@ namespace CSharp.Assignments.Selection1
             //    Console.WriteLine("Anything else is pressed");
             //}
 
-            double number = 1357743;
+            //132 , 1234642 , 1357743, 35782 -> True
+            //12 , 1435421, 3454326
+
+            double number = 35782;
             string numString = number.ToString();
             Console.WriteLine($"Number of digits = {numString.Length}");
             int NumOfDigit = numString.Length;
@@ -541,34 +544,43 @@ namespace CSharp.Assignments.Selection1
             int counter = NumOfDigit;
             double Divison = number;
             bool redFlag = true;
+            int mod = (int)Divison % 10;
             Console.WriteLine("Original number = " + number);
 
             while (Divison > 0 || counter > 0)
             {
-
-                Console.WriteLine("Remainder(Modulo) = " + (int)Divison % 10);
+                mod = (int)Divison % 10;
+                Console.WriteLine("Remainder(Modulo) = " + mod);
                 Console.WriteLine("Divide = " + Divison / 10);
-                Divison = (Divison / 10);
-                Divison = Math.Truncate(Divison);
+                //Divison = (Divison / 10);
+                //Divison = Math.Truncate(Divison);
 
-                if (((NumOfDigit - 1) / 2) + 1 <= counter)
+                if (((NumOfDigit - 1) / 2) + 2 <= counter)
                 {
-                    if (((int)number % 10) < LastNumber && counter != NumOfDigit)
+                    if (((int)Divison % 10) < LastNumber && counter != NumOfDigit)
                     {
                         Console.WriteLine("End part problem.");
                         redFlag = false;
                     }
                 }
-                else
+                else if (((NumOfDigit - 1) / 2) + 1 == counter)
                 {
-                    if ((int)number % 10 > LastNumber)
+                    
+                }
+                else if (((NumOfDigit - 1) / 2) >= counter)
+                {
+                    if ((int)Divison % 10 > LastNumber)
                     {
                         Console.WriteLine("Start part problem.");
                         redFlag = false;
                     }
                 }
-                LastNumber = (int)number % 10;
+
+
+                LastNumber = mod;
                 Console.WriteLine("Number = " + Divison);
+                Divison = (Divison / 10);
+                Divison = Math.Truncate(Divison);
                 counter--;
                 Console.WriteLine();
                 if (!redFlag)
