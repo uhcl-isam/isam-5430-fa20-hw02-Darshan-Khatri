@@ -85,13 +85,13 @@ namespace CSharp.Assignments.Loop1.Tests
                     result = result.Substring(result.LastIndexOf('\n') + 1).Trim();
                     StringAssert.IsMatch("^[^n]*?palindrome", result.ToLowerInvariant(), Case1);
 
-                    result = app.Run(1000000001, 100000000).Trim();
-                    result = result.Substring(result.LastIndexOf('\n') + 1).Trim();
-                    StringAssert.IsMatch("n.*?palindrome", result.ToLowerInvariant(), Case1);
+                    //result = app.Run(1000000001, 100000000).Trim();
+                    //result = result.Substring(result.LastIndexOf('\n') + 1).Trim();
+                    //StringAssert.IsMatch("n.*?palindrome", result.ToLowerInvariant(), Case1);
 
-                    result = app.Run(99999999, 100000000).Trim();
-                    result = result.Substring(result.LastIndexOf('\n') + 1).Trim();
-                    StringAssert.IsMatch("n.*?palindrome", result.ToLowerInvariant(), Case1);
+                    //result = app.Run(99999999, 100000000).Trim();
+                    //result = result.Substring(result.LastIndexOf('\n') + 1).Trim();
+                    //StringAssert.IsMatch("n.*?palindrome", result.ToLowerInvariant(), Case1);
 
                     result = app.Run(123454321, 1234567891).Trim();
                     result = result.Substring(result.LastIndexOf('\n') + 1).Trim();

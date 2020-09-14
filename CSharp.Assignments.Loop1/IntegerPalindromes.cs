@@ -18,22 +18,84 @@ namespace CSharp.Assignments.Loop1
         public static void Main()
         {
             // enter sentinel inputs
-            int number = 0;
-            Console.Write("Enter 9 digit number : ");
-            number = Convert.ToInt32(Console.ReadLine());
+            long OriginalNumber = 0;
+            //Console.Write("Enter 9 digit number : ");
+            OriginalNumber = Convert.ToInt64(Console.ReadLine());
 
-            while ((number / Math.Pow(10, 9)) > 0)
+            while ((((OriginalNumber / Math.Pow(10, 9)) > 0.99999F) || ((OriginalNumber / Math.Pow(10, 9)) <= 0.1F)))
             {
-                Console.WriteLine("Entered number is not a 9 digit number, try again.");
-                Console.Write("Enter 9 digit number : ");
-                number = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Entered number is not a 9 digit number, try again.-> ");
+                OriginalNumber = Convert.ToInt64(Console.ReadLine());
             }
+
+
+
             // then check the palindrome only once.
             //string NumberString = number.ToString();
             //int sub1 = Convert.ToInt32(NumberString.Substring(0,5));
             //int sub2 = Convert.ToInt32(NumberString.Substring(4));
-            
-            
+            int number1 = 0, number2 = 0, number3 = 0, number4 = 0, counter = 0, mod;
+            double division = OriginalNumber;
+
+            bool redFlag = true;
+
+            while (counter < 10)
+            {
+                mod = (int)division % 10; //1
+                division = division / 10; //12345432.1
+                division = Math.Truncate(division); //12345432
+
+                if (counter == 0)
+                {
+                    number1 = mod; // number1 = 1
+                }
+                else if (counter == 1)
+                {
+                    number2 = mod; // number2 = 2
+                }
+                else if (counter == 2)
+                {
+                    number3 = mod; // number3 = 3
+                }
+                else if (counter == 3)
+                {
+                    number4 = mod; // number4 = 4
+                }
+                else if (counter == 5 && mod != number4)
+                {
+                    redFlag = false;
+                    break;
+                }
+                else if (counter == 6 && mod != number3)
+                {
+                    redFlag = false;
+                    break;
+                }
+                else if (counter == 7 && mod != number2)
+                {
+                    redFlag = false;
+                    break;
+                }
+                else if (counter == 8 && mod != number1)
+                {
+                    redFlag = false;
+                    break;
+                }
+
+                counter++;
+
+            }
+
+            if (redFlag)
+            {
+                Console.WriteLine($"Palindrome");
+            }
+            else
+            {
+                Console.WriteLine($"Not Palindrome");
+            }
+
+
         }
     }
 }

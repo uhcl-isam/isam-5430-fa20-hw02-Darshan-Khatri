@@ -533,69 +533,219 @@ namespace CSharp.Assignments.Selection1
             //    Console.WriteLine("Anything else is pressed");
             //}
 
-            //132 , 1234642 , 1357743, 35782 -> True
-            //12 , 1435421, 3454326
 
-            double number = 35782;
-            string numString = number.ToString();
-            Console.WriteLine($"Number of digits = {numString.Length}");
-            int NumOfDigit = numString.Length;
-            int LastNumber = 0;
-            int counter = NumOfDigit;
-            double Divison = number;
-            bool redFlag = true;
-            int mod = (int)Divison % 10;
-            Console.WriteLine("Original number = " + number);
+            //***************************Logic1(IsHilly)****************************
 
-            while (Divison > 0 || counter > 0)
+            //double number = 35782;
+            //string numString = number.ToString();
+            //Console.WriteLine($"Number of digits = {numString.Length}");
+            //int NumOfDigit = numString.Length;
+            //int LastNumber = 0;
+            //int counter = NumOfDigit;
+            //double Divison = number;
+            //bool redFlag = true;
+            //int mod = (int)Divison % 10;
+            //Console.WriteLine("Original number = " + number);
+
+            //while (Divison > 0 || counter > 0)
+            //{
+            //    mod = (int)Divison % 10;
+            //    Console.WriteLine("Remainder(Modulo) = " + mod);
+            //    Console.WriteLine("Divide = " + Divison / 10);
+            //    //Divison = (Divison / 10);
+            //    //Divison = Math.Truncate(Divison);
+
+            //    if (((NumOfDigit - 1) / 2) + 2 <= counter)
+            //    {
+            //        if (((int)Divison % 10) < LastNumber && counter != NumOfDigit)
+            //        {
+            //            Console.WriteLine("End part problem.");
+            //            redFlag = false;
+            //        }
+            //    }
+            //    else if (((NumOfDigit - 1) / 2) + 1 == counter)
+            //    {
+
+            //    }
+            //    else if (((NumOfDigit - 1) / 2) >= counter)
+            //    {
+            //        if ((int)Divison % 10 > LastNumber)
+            //        {
+            //            Console.WriteLine("Start part problem.");
+            //            redFlag = false;
+            //        }
+            //    }
+
+
+            //    LastNumber = mod;
+            //    Console.WriteLine("Number = " + Divison);
+            //    Divison = (Divison / 10);
+            //    Divison = Math.Truncate(Divison);
+            //    counter--;
+            //    Console.WriteLine();
+            //    if (!redFlag)
+            //    {
+            //        break;
+            //    }
+
+            //}
+
+            //******************PALINDROMES*********************************
+
+            //Console.WriteLine($"2345 % 10 = {2345 % 10}");
+            //Console.WriteLine($"2345 % 100 = {2345 % 100}");
+
+            //123454321, 936212639, 999999999 -> True
+            //111111110, 123554321, 987654321 -> False
+
+            //int OriginalNumber = 987654321, number1 = 0, number2 = 0, number3 = 0, number4 = 0, counter = 0, mod;
+            //double division = OriginalNumber;
+
+            //bool redFlag = true;
+
+            //while (counter < 10)
+            //{
+            //    mod = (int)division % 10; //1
+            //    division = division / 10; //12345432.1
+            //    division = Math.Truncate(division); //12345432
+
+            //    if (counter == 0)
+            //    {
+            //        number1 = mod; // number1 = 1
+            //    }
+            //    else if (counter == 1)
+            //    {
+            //        number2 = mod; // number2 = 2
+            //    }
+            //    else if (counter == 2)
+            //    {
+            //        number3 = mod; // number3 = 3
+            //    }
+            //    else if (counter == 3)
+            //    {
+            //        number4 = mod; // number4 = 4
+            //    }
+            //    else if (counter == 5 && mod != number4)
+            //    {
+            //        Console.WriteLine($"Not a palindrome bcoz of number at {counter}");
+            //        redFlag = false;
+            //        break;
+            //    }
+            //    else if (counter == 6 && mod != number3)
+            //    {
+            //        Console.WriteLine($"Not a palindrome bcoz of number at {counter}");
+            //        redFlag = false;
+            //        break;
+            //    }
+            //    else if (counter == 7 && mod != number2)
+            //    {
+            //        Console.WriteLine($"Not a palindrome bcoz of number at {counter}");
+            //        redFlag = false;
+            //        break;
+            //    }
+            //    else if (counter == 8 && mod != number1)
+            //    {
+            //        Console.WriteLine($"Not a palindrome bcoz of number at {counter}");
+            //        redFlag = false;
+            //        break;
+            //    }
+
+            //    counter++;
+
+            //}
+
+            //if (redFlag)
+            //{
+            //    Console.WriteLine($"Given number {OriginalNumber} is a Palindrome.");
+            //}
+            //else
+            //{
+            //    Console.WriteLine($"Given number {OriginalNumber} is NOT a Palindrome.");
+            //}
+
+            //***************************************************
+
+            long OriginalNumber = 0;
+            Console.Write("Enter 9 digit number : ");
+            OriginalNumber = Convert.ToInt64(Console.ReadLine());
+
+            while ((((OriginalNumber / Math.Pow(10, 9)) > 0.99999F) || ((OriginalNumber / Math.Pow(10, 9)) <= 0.1F)))
             {
-                mod = (int)Divison % 10;
-                Console.WriteLine("Remainder(Modulo) = " + mod);
-                Console.WriteLine("Divide = " + Divison / 10);
-                //Divison = (Divison / 10);
-                //Divison = Math.Truncate(Divison);
+                Console.WriteLine("Entered number is not a 9 digit number, try again.-> " + (OriginalNumber / Math.Pow(10, 9)));
 
-                if (((NumOfDigit - 1) / 2) + 2 <= counter)
-                {
-                    if (((int)Divison % 10) < LastNumber && counter != NumOfDigit)
-                    {
-                        Console.WriteLine("End part problem.");
-                        redFlag = false;
-                    }
-                }
-                else if (((NumOfDigit - 1) / 2) + 1 == counter)
-                {
-                    
-                }
-                else if (((NumOfDigit - 1) / 2) >= counter)
-                {
-                    if ((int)Divison % 10 > LastNumber)
-                    {
-                        Console.WriteLine("Start part problem.");
-                        redFlag = false;
-                    }
-                }
+                OriginalNumber = Convert.ToInt64(Console.ReadLine());
+            }
+            // then check the palindrome only once.
+            //string NumberString = number.ToString();
+            //int sub1 = Convert.ToInt32(NumberString.Substring(0,5));
+            //int sub2 = Convert.ToInt32(NumberString.Substring(4));
+            int number1 = 0, number2 = 0, number3 = 0, number4 = 0, counter = 0, mod;
+            double division = OriginalNumber;
 
+            bool redFlag = true;
 
-                LastNumber = mod;
-                Console.WriteLine("Number = " + Divison);
-                Divison = (Divison / 10);
-                Divison = Math.Truncate(Divison);
-                counter--;
-                Console.WriteLine();
-                if (!redFlag)
+            while (counter < 10)
+            {
+                mod = (int)division % 10; //1
+                division = division / 10; //12345432.1
+                division = Math.Truncate(division); //12345432
+
+                if (counter == 0)
                 {
+                    number1 = mod; // number1 = 1
+                }
+                else if (counter == 1)
+                {
+                    number2 = mod; // number2 = 2
+                }
+                else if (counter == 2)
+                {
+                    number3 = mod; // number3 = 3
+                }
+                else if (counter == 3)
+                {
+                    number4 = mod; // number4 = 4
+                }
+                else if (counter == 5 && mod != number4)
+                {
+                    Console.WriteLine($"Not a palindrome bcoz of number at {counter}");
+                    redFlag = false;
+                    break;
+                }
+                else if (counter == 6 && mod != number3)
+                {
+                    Console.WriteLine($"Not a palindrome bcoz of number at {counter}");
+                    redFlag = false;
+                    break;
+                }
+                else if (counter == 7 && mod != number2)
+                {
+                    Console.WriteLine($"Not a palindrome bcoz of number at {counter}");
+                    redFlag = false;
+                    break;
+                }
+                else if (counter == 8 && mod != number1)
+                {
+                    Console.WriteLine($"Not a palindrome bcoz of number at {counter}");
+                    redFlag = false;
                     break;
                 }
 
+                counter++;
+
             }
 
-            //double num = 1357743;
-            //Console.WriteLine("Original num = " +num);
-            //double div = num / 10f;
-            //Console.WriteLine( "div = "+ div);
-            //div = Math.Truncate(div);
-            //Console.WriteLine("Trunc = " + div);
+            if (redFlag)
+            {
+                Console.WriteLine($"Given number {OriginalNumber} is a Palindrome.");
+            }
+            else
+            {
+                Console.WriteLine($"Given number {OriginalNumber} is NOT a Palindrome.");
+            }
+
+            //Console.WriteLine(0.1F);
+            //Console.WriteLine(0.0123 > 0.1F);
 
 
         }
