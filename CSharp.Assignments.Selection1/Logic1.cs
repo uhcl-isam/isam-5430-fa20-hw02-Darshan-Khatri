@@ -257,7 +257,12 @@ namespace CSharp.Assignments.Loop1
         /// <param name="number">Number.</param>
         public static bool IsHilly(int number)
         {
-
+            //1357743 -> True
+            //3454326 -> False
+            if (number / 100 <= 0)
+            {
+                return false;
+            }
             throw new NotImplementedException();
         }
 

@@ -302,46 +302,46 @@ namespace CSharp.Assignments.Selection1
             //Console.WriteLine($"Largest2 = {largest2}");
 
 
-            int counter = 1;
-            int number = 0;
-            int largest = 0;
-            int largest2 = 0;
-            // get first number and assign it to variable largest
+            //int counter = 1;
+            //int number = 0;
+            //int largest = 0;
+            //int largest2 = 0;
+            //// get first number and assign it to variable largest
 
-            while (counter <= 10)
-            {
-                //3 10 2 5 8
+            //while (counter <= 10)
+            //{
+            //    //3 10 2 5 8
 
-                Console.Write($"Enter a {counter} number: ");
-                number = Convert.ToInt32(Console.ReadLine()); //8
-                if (counter == 1)
-                {
-                    largest = number; //largest = 3
-                    largest2 = number;
-                }
-                else
-                {
-                    if (number < largest && number > largest2)
-                    {
-                        largest2 = number; //largest2 = 8
-                    }
-                    else if (largest == number)
-                    {
-                        largest2 = number;
-                    }
-                    else if (number > largest)
-                    {
-                        largest2 = largest; // 
-                        largest = number; // largest = 10
-                    }
-                    else if (counter == 2 && number < largest && number < largest2)
-                    {
-                        largest2 = number;
-                    }
-                }
-                counter++;
-            }
-            Console.Write($"{largest} {largest2}");
+            //    Console.Write($"Enter a {counter} number: ");
+            //    number = Convert.ToInt32(Console.ReadLine()); //8
+            //    if (counter == 1)
+            //    {
+            //        largest = number; //largest = 3
+            //        largest2 = number;
+            //    }
+            //    else
+            //    {
+            //        if (number < largest && number > largest2)
+            //        {
+            //            largest2 = number; //largest2 = 8
+            //        }
+            //        else if (largest == number)
+            //        {
+            //            largest2 = number;
+            //        }
+            //        else if (number > largest)
+            //        {
+            //            largest2 = largest; // 
+            //            largest = number; // largest = 10
+            //        }
+            //        else if (counter == 2 && number < largest && number < largest2)
+            //        {
+            //            largest2 = number;
+            //        }
+            //    }
+            //    counter++;
+            //}
+            //Console.Write($"{largest} {largest2}");
 
             //************************************************************
 
@@ -532,6 +532,59 @@ namespace CSharp.Assignments.Selection1
             //{
             //    Console.WriteLine("Anything else is pressed");
             //}
+
+            double number = 1357743;
+            string numString = number.ToString();
+            Console.WriteLine($"Number of digits = {numString.Length}");
+            int NumOfDigit = numString.Length;
+            int LastNumber = 0;
+            int counter = NumOfDigit;
+            double Divison = number;
+            bool redFlag = true;
+            Console.WriteLine("Original number = " + number);
+
+            while (Divison > 0 || counter > 0)
+            {
+
+                Console.WriteLine("Remainder(Modulo) = " + (int)Divison % 10);
+                Console.WriteLine("Divide = " + Divison / 10);
+                Divison = (Divison / 10);
+                Divison = Math.Truncate(Divison);
+
+                if (((NumOfDigit - 1) / 2) + 1 <= counter)
+                {
+                    if (((int)number % 10) < LastNumber && counter != NumOfDigit)
+                    {
+                        Console.WriteLine("End part problem.");
+                        redFlag = false;
+                    }
+                }
+                else
+                {
+                    if ((int)number % 10 > LastNumber)
+                    {
+                        Console.WriteLine("Start part problem.");
+                        redFlag = false;
+                    }
+                }
+                LastNumber = (int)number % 10;
+                Console.WriteLine("Number = " + Divison);
+                counter--;
+                Console.WriteLine();
+                if (!redFlag)
+                {
+                    break;
+                }
+
+            }
+
+            //double num = 1357743;
+            //Console.WriteLine("Original num = " +num);
+            //double div = num / 10f;
+            //Console.WriteLine( "div = "+ div);
+            //div = Math.Truncate(div);
+            //Console.WriteLine("Trunc = " + div);
+
 
         }
 
