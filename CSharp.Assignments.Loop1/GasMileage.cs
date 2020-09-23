@@ -22,36 +22,28 @@ namespace CSharp.Assignments.Loop1
     {
         public static void Main()
         {
-            int totalMiles = 0;
-            int totalGallons = 0;
-            int miles = 0;
-            // prompt user for non-negative miles and obtain the input from user
-            //Console.Write("How many miles you have driven till now: ");
-            miles = Convert.ToInt32(Console.ReadLine());
-            while (miles >= 0)
+            int Mile = 0;
+            int Gallon = 0;
+            float MPG = 0;
+            float SumMPG = 0;
+            int GallonSum = 0;
+            int MileSum = 0;
+
+            while (true)
             {
-                Console.Write("Enter amount of gallons used to drive miles, you have mentioned above: ");
-                int Gallons = Math.Abs(Convert.ToInt32(Console.ReadLine()));
-                // codes go here.
-                decimal Average = (decimal)miles / (decimal)Gallons;
-                Console.WriteLine($"MPG this tankful: {Math.Round(Average, 2)}");
-
-                totalMiles += miles;
-                totalGallons += Gallons;
-                decimal totalAverage = (decimal)totalMiles / (decimal)totalGallons;
-                Console.WriteLine($"Total MPG: {Math.Round(totalAverage, 2)}");
-                Console.WriteLine();
-
-                Console.Write("How many miles you have driven till now: ");
-                miles = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine();
-                //if (miles < 0)
-                //{
-                //    Console.WriteLine($"MPG this tankful: {Math.Round(Average, 2)}");
-                //    //Console.WriteLine($"Total MPG: {Math.Round(totalAverage, 2)}");
-                //}
+                Console.Write("Enter a miles driven: ");
+                Mile = Convert.ToInt32(Console.ReadLine());
+                if (Mile < 0) { break; }
+                MileSum = MileSum + Mile;
+                Console.Write("Enter a gallons used: ");
+                Gallon = Convert.ToInt32(Console.ReadLine());
+                if (Gallon < 0) { Gallon = -1 * Gallon; }
+                GallonSum = GallonSum + Gallon;
+                MPG = (float)(Mile) / (float)(Gallon);
+                Console.WriteLine("MPG = " + MPG.ToString("N2"));
+                SumMPG = (float)MileSum / (float)GallonSum;
+                Console.WriteLine("Total MPG = " + SumMPG.ToString("N2"));
             }
-            Console.WriteLine();
 
         }
     }
